@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Cinemática</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/foguetinho.png">
+
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header id="cabecalho" class="cabecalho">
+        <h1 class="cabecalho__titulo">Simulador de Cinemática</h1>
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Início</a>
+        </nav>
+    </header>
+    
+    <main class="inicio">      
+        <div class="inicio__texto__index"> 
+            <p class="inicio__texto__manual__h2">Importante!</p>
+            <p class="inicio__texto__manual"> O simulador utiliza o modelo de lançamento oblíquo para calcular a trajetória do projétil. <br> Antes de usar, por favor leia a documentação e licença de uso disponíveis no rodapé do site.</p>
+        </div>
+        
+        <div class="painel-controles">
+            <label>
+                <span class="titulo-controle">Velocidade Inicial: <span id="val-vel">30</span> m/s</span>
+                <input type="range" id="input-vel" min="1" max="100" value="30" oninput="atualizarLabels()">
+            </label>
+            
+            <label>
+                <span class="titulo-controle">Ângulo: <span id="val-ang">45</span>°</span>
+                <input type="range" id="input-ang" min="0" max="90" value="45" oninput="atualizarLabels()">
+            </label>
+
+            <label>Altura Inicial (m): 
+                <input type="number" id="input-alt" value="0" min="0">
+            </label>
+
+            <label>Massa (kg): 
+                <input type="number" id="input-massa" value="1" min="0.1">
+            </label>
+
+            <label>Planeta: 
+                <select id="select-planeta">
+                    <option value="9.81">Terra (9.81 m/s²)</option>
+                    <option value="3.71">Marte (3.71 m/s²)</option>
+                    <option value="24.79">Júpiter (24.79 m/s²)</option>
+                    <option value="1.62">Lua (1.62 m/s²)</option>
+                </select>
+            </label>
+
+            <label>Formato do Projétil: 
+                <select id="select-formato">
+                    <option value="0.47">Esfera (Bola)</option>
+                    <option value="1.05">Cubo (Caixa)</option>
+                    <option value="0.04">Aerodinâmico (Foguete)</option>
+                </select>
+            </label>
+
+            <button onclick="dispararProjetil()">🚀 Lançar!</button>
+        </div>
+        
+        <canvas class="inicio__canvas" id="cenario" width="800" height="500"></canvas>
+        <div id="painel-resultados" class="painel__resultados">
+            <h3 style="margin-top: 0; color: #00d2d3;"> Resultados Estatísticos</h3>
+            <p><strong>Alcance Máximo:</strong> <span id="res-alcance">0.00</span> m</p>
+            <p><strong>Altura Máxima:</strong> <span id="res-altura">0.00</span> m</p>
+            <p><strong>Tempo Total de Voo:</strong> <span id="res-tempo">0.00</span> s</p>
+            <p><strong>Velocidade de Impacto:</strong> <span id="res-vel-final">0.00</span> m/s</p>
+            <p><strong>Energia Cinética Final:</strong> <span id="res-energia">0.00</span> J</p>
+        </div>
+    </main>
+    <footer class="rodape">
+        <div class="rodape__conteudo">
+            <p class="rodape__texto">
+                Desenvolvido por alunos da <strong>EEL USP</strong>. 
+                Projeto educacional de simulação física.
+            </p>
+            <div class="rodape__links">
+                <a href="assets/documentacao.pdf" download class="rodape__link">Download Documentação (PDF)</a>
+                <span class="rodape__divisor">|</span>
+                <a href="assets/licencadeuso.pdf" download class="rodape__link">Licença de Uso (PDF)</a>
+            </div>
+        </div>
+        <div class="rodape__direitos">
+            <p class="rodape__texto-direitos">&copy; 2026 EEL USP. Todos os direitos reservados. | <a href="#cabecalho" class="rodape__link-topo">Voltar ao topo ↑</a></p>
+        </div>
+</footer>
+</body>
+</html>

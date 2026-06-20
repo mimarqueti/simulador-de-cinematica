@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --cor-primaria: #EAF2DC; 
+    --cor-secundaria: white;
+    --cor-terciaria: blue;
+    --cor-hover: darkblue;
+
+    --fonte-primaria: 'Rubik', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+}
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    gap: 20px;
+    padding: 2% 0;
+    background-color: var(--cor-terciaria);
+}
+
+.cabecalho__titulo {
+    justify-content: center;
+    text-align: center;
+    width: 615px;
+    gap: 40px;
+    width: 50%;
+    font-family: var(--fonte-primaria);
+    font-weight: normal;
+    font-size: 2rem;
+    color: var(--cor-secundaria)
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+.inicio {
+    padding: 5% 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.inicio__apresentacao{
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 50%;
+    font-family: var(--fonte-primaria);
+    font-weight: normal;
+    font-size: 2rem;
+    color: var(--cor-terciaria);
+}
+
+.inicio__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30%;
+    width: 50%;
+}
+
+.inicio__links__link{
+    text-decoration: none;
+    max-width: fit-content;
+    margin: 5% 0%;  
+    font-family: var(--fonte-secundaria);
+    font-size: large;
+    font-weight: 400;
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 15px;
+    padding: 5% 5%;
+    transition: 0.2s;
+    gap: 20%;
+    white-space: nowrap;
+}
+
+.inicio__texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5% 0%; 
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    border-radius: 6px;
+}
+
+.inicio__texto__index{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    padding: 5% 0%; 
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    border-radius: 6px;
+}
+
+.inicio__texto__manual{
+    display: flex;
+    
+    text-align: center;
+    padding: 2%;
+    font-family: var(--fonte-primaria);
+    font-size: large;
+    font-weight: 400;
+}
+
+.inicio__texto__manual__h2{
+    align-items: center;
+    padding: 2%;
+    font-size: 1.5em;
+    font-weight: bolder;
+    font-family: var(--fonte-primaria);
+}
+
+.inicio__texto__manual__strong{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Container Principal do Painel */
+.painel-controles {
+    background-color: #ffffff;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Sombra suave profissional */
+    
+    display: flex;
+    flex-wrap: wrap; /* Faz os elementos quebrarem de linha se a tela for pequena */
+    gap: 20px; /* Espaço uniforme entre cada controle */
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* Título do Painel */
+.painel-controles h2 {
+    width: 100%; /* Ocupa a linha inteira */
+    margin: 0 0 10px 0;
+    color: #2d3436;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    border-bottom: 2px solid #f1f2f6;
+    padding-bottom: 10px;
+}
+
+/* Estilização de cada Label (que envelopa os inputs) */
+.painel-controles label {
+    display: flex;
+    flex-direction: column; /* Coloca o texto em cima e o input embaixo */
+    width: 30%; /* Exibe 3 controles por linha em telas grandes */
+    min-width: 220px; /* Não deixa esmagar em telas menores */
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #57606f;
+}
+
+/* Cor de destaque para os números das barras (Spans) */
+.painel-controles label span {
+    color: #ff4757; /* Vermelho combinando com a bolinha */
+    font-size: 1rem;
+}
+
+/* Estilização das Barras Deslizantes (Ranges) */
+.painel-controles input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    accent-color: #ff4757; /* Muda a cor da bolinha da barra para vermelho */
+}
+
+/* Estilização das Caixas de Seleção (Selects) */
+.painel-controles select {
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    color: #2d3436;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.painel-controles select:focus {
+    border-color: #ff4757; /* Borda vermelha ao clicar */
+}
+
+/* Estilização do Botão Lançar */
+.painel-controles button {
+    width: 100%; /* Botão ocupa a largura total embaixo */
+    background-color: var(--cor-terciaria); /* Verde "go" */
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 10px;
+}
+
+/* Efeitos do Botão */
+.painel-controles button:hover {
+    background-color: var(--cor-hover); /* Verde mais escuro no hover */
+}
+
+.painel-controles button:active {
+    transform: scale(0.98); /* Efeito de clique afundando de leve */
+}
+
+.painel__resultados {
+    background-color: #ffffff;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Sombra suave profissional */
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço uniforme entre cada resultado */
+}
+.inicio__canvas {
+    background-color: #f9f9f9; /* Um cinza bem claro */
+    border: 2px solid #333333; /* Uma borda escura */
+    display: block; /* Garante que ele ocupe seu próprio espaço */
+    margin: 20px auto; /* Centraliza na tela */
+}
+
+.inicio__links__link:hover{
+    background-color: var(--cor-hover);
+    border-color: var(--cor-hover);
+    transform: scale(1.05);
+}
+
+.inicio__links__link:active{
+    background-color: var(--cor-terciaria);
+    border-color: var(--cor-terciaria);
+    transform: scale(0.95);
+}
+.rodape {
+    background-color: var(--cor-secundaria); /* Seu fundo branco */
+    color: #4b5563; /* Um tom cinza escuro clássico para texto de rodapé */
+    padding: 25px 20px 15px 20px;
+    font-family: var(--fonte-primaria);
+    margin-top: 50px;
+    border-top: 1px solid var(--cor-primaria); /* Linha sutil verde-clara dividindo o conteúdo */
+    font-size: 0.85rem;
+}
+
+.rodape__conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.rodape__texto {
+    margin: 0;
+}
+
+.rodape__texto strong {
+    color: var(--cor-terciaria); /* Destaca a EEL USP no seu azul */
+}
+
+.rodape__links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rodape__link {
+    color: var(--cor-terciaria); /* Link em azul */
+    text-decoration: none;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.rodape__link:hover {
+    color: var(--cor-hover); /* Efeito darkblue ao passar o mouse */
+    text-decoration: underline; /* Sublinhado clássico de link */
+}
+
+.rodape__divisor {
+    color: #d1d5db; /* Cor cinza clara para a barrinha separadora */
+    user-select: none;
+}
+
+.rodape__direitos {
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    padding-top: 15px;
+    border-top: 1px dashed var(--cor-primaria);
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.rodape__texto-direitos {
+    margin: 0;
+}
+
+.rodape__link-topo {
+    color: #9ca3af;
+    text-decoration: none;
+}
+
+.rodape__link-topo:hover {
+    color: var(--cor-terciaria);
+}
+/* celular */
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 6%;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cabecalho__menu {
+        justify-content: center;
+        gap: 15%;
+        padding: 0 10% 0 0;
+    }
+
+    .cabecalho__menu__link{
+        font-size: 1.0rem;
+    }
+
+    .inicio {
+        display: flex;
+        flex-direction: column;
+        padding: 10%;
+    }
+
+    .inicio__apresentacao {
+        width: auto;
+        align-items: center;
+        font-size: 1.25rem;
+    }
+
+    .inicio__links {
+        gap: 0;
+    }
+
+
+}
