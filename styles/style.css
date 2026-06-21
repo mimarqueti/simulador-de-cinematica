@@ -268,23 +268,3 @@ body {
 .rodape__link-topo:hover {
     color: var(--cor-terciaria);
 }
-
-/* MOBILE */
-@media (max-width: 1200px) {
-    .cabecalho {
-        padding: 6%;
-    }
-    
-    .cabecalho__menu {
-        gap: 15%;
-        padding: 0 10% 0 0;
-    }
-
-    .cabecalho__menu__link {
-        font-size: 1.0rem;
-    }
-
-    .inicio {
-        padding: 10%;
-    }
-}
